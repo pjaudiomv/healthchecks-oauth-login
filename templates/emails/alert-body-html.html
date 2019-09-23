@@ -1,0 +1,32 @@
+{% extends "emails/base.html" %}
+{% load hc_extras %}
+{% block content %}
+
+The check <a href="{{ check.details_url }}">{{ check.name_then_code|mangle_link }}</a>
+has gone <strong>{{ check.status|upper }}</strong>.
+<br>
+
+{% if check.status == "down" and check.desc %}
+Additional notes:<br><br>
+<div style="padding: 10px 15px; background: #F2F4F6;">
+    {{ check.desc|linebreaksbr|urlize }}
+</div>
+{% endif %}
+
+<br />
+A summary of your checks:
+<br />
+
+{% include "emails/summary-html.html" %}
+
+Thanks,<br>
+The {% site_name %} Team
+
+{% endblock %}
+
+{% block unsub %}
+<br>
+<a href="{{ unsub_link }}?ask=1" target="_blank" style="color: #666666; text-decoration: underline;">
+    Unsubscribe
+</a>
+{% endblock %}

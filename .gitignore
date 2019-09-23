@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.coverage
+.env
+hc.sqlite
+hc/local_settings.py
+static-collected
+allauth
+env
+.vscode
+.DS_Store
