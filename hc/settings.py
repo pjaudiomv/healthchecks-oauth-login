@@ -237,31 +237,6 @@ OAUTH_DISABLE_LOCAL_LOGIN = envbool("OAUTH_DISABLE_LOCAL_LOGIN", "False")
 # disable magic link login when oauth in use
 OAUTH_DISABLE_MAGIC_LOGIN = envbool("OAUTH_DISABLE_MAGIC_LOGIN", "False")
 
-#=============================================================================
-#=============================================================================
-#=============================================================================
-# KR customizations, do not contribute these.
-#=============================================================================
-#=============================================================================
-#=============================================================================
-# Custom OAuth2
-AUTH_PROVIDERS = ('hc.providers.customoauth2',)
-
-KRID_BASE_URL = str(os.getenv("KRID_BASE_URL"))
-CUSTOM_OAUTH2_CLIENT_ID = str(os.getenv("CUSTOM_OAUTH2_CLIENT_ID"))
-CUSTOM_OAUTH2_CLIENT_SECRET = str(os.getenv("CUSTOM_OAUTH2_CLIENT_SECRET"))
-CUSTOM_OAUTH2_TOKEN_URL = KRID_BASE_URL + '/oauth/token' 
-CUSTOM_OAUTH2_AUTHORIZE_URL = KRID_BASE_URL + '/oauth/authorize'
-CUSTOM_OAUTH2_ACCOUNT_URL = KRID_BASE_URL + '/oauth/user_info'
-CUSTOM_OAUTH2_DISPLAY_NAME = "KRID"
-CUSTOM_OAUTH2_LINK_CSS = \
-"background-image: url(/static/img/kr-btn.png);" + \
-"background-position: center;" + \
-"background-repeat: no-repeat;" + \
-"background-size: 19em;" + \
-"color: transparent;" + \
-"height: 4.5em;"
-
 # disable email verify for us, we are doing social login. just log in!
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
